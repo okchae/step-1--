@@ -86,6 +86,21 @@ origin을 직접 설정하려면 git remote add 명령을 사용합니다. 이 �
 reset에는 3가지 타입이 있습니다.  
 각 타입에 대해 작성 바랍니다.
 
+Soft Reset:`git reset --soft <commit> `
+커밋을 특정 지점으로 이동시키며, 작업 트리와 스테이징 영역은 변하지 않습니다.
+이전 커밋 이후의 변경 사항을 다시 스테이징 영역에 추가하고, 새로운 커밋을 생성하거나 이전 커밋을 수정할 수 있습니다.
+사용 예시: git reset --soft HEAD~1 (마지막 커밋 취소 후 변경 사항을 스테이징 영역에 유지)
+
+Mixed Reset (Default) `git reset <commit>` --mixed 옵션이나 아무 옵션 없이 git reset만 사용해도 됩니다.
+커밋을 특정 지점으로 이동시키며, 스테이징 영역은 비워집니다. 하지만 작업 트리는 변경 사항을 유지합니다.
+변경 사항을 스테이징 영역에 다시 추가하여 커밋을 수정하거나, 새로운 커밋을 생성할 수 있습니다.
+사용 예시: git reset HEAD~1 (마지막 커밋 취소 후 변경 사항을 작업 트리에 유지)
+
+Hard Reset:`git reset --hard <commit>` 
+커밋을 특정 지점으로 이동시키며, 작업 트리와 스테이징 영역을 완전히 해당 커밋 상태로 변경합니다.
+변경 사항을 모두 제거하고 이전 커밋 상태로 되돌립니다. 주의해서 사용해야 합니다.
+사용 예시: git reset --hard HEAD~1 (마지막 커밋과 변경 사항 모두 제거)
+
 ## Pull Request, Merge
 ![pull-request-merge](https://atlassianblog.wpengine.com/wp-content/uploads/bitbucket411-blog-1200x-branches2.png)  
 Pull Request와 Merge에 대한 내용을 적어주세요.  

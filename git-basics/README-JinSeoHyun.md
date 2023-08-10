@@ -40,10 +40,33 @@ Git Push : git push 명령은 로컬 저장소에 커밋된 변경 사항들을 
 
 ## Branch, HEAD
 ![branch-and-head](https://ihatetomatoes.net/wp-content/uploads/2020/04/07-head-pointer.png)  
-git이 동작하는 기본 단위는 commit과 branch입니다.  
-branch와 HEAD, git checkout을 포함하여 작성 바랍니다.  
-branch 생성 및 삭제, 이동 커맨드 등 자유롭게 내용을 추가해주세요.
 
+Commit (커밋):
+커밋은 Git에서 변경 사항의 스냅샷을 의미합니다.
+코드 변경 내용을 스테이징한 후 git commit 명령으로 로컬 저장소에 저장합니다.
+각 커밋은 고유한 해시값을 가지며, 변경 내용과 메시지를 포함합니다.
+
+Branch (브랜치):
+브랜치는 독립적인 작업 흐름을 나타내는 것으로, 기존 코드를 기반으로 새로운 작업을 진행할 때 사용합니다.
+git branch 명령으로 브랜치를 생성하고, git branch -d 명령으로 브랜치를 삭제할 수 있습니다.
+
+HEAD:
+HEAD는 현재 작업 중인 커밋을 가리키는 포인터입니다.
+일반적으로 HEAD는 현재 체크아웃된 브랜치의 가장 최신 커밋을 가리킵니다.
+
+Git Checkout:
+git checkout 명령은 특정 브랜치나 커밋으로 작업 디렉토리와 HEAD를 이동시킵니다.
+git checkout <branch-name> 명령으로 특정 브랜치로 이동하거나, git checkout <commit-hash> 명령으로 특정 커밋으로 이동할 수 있습니다.
+
+git branch <new-branch-name> : 새로운 브랜치를 생성
+
+git branch -d <branch-name> : 브랜치를 삭제
+
+git checkout <branch-name> : 다른 브랜치로 이동
+
+git checkout -b <new-branch-name> : 새 브랜치를 생성하고 이동
+
+git merge <source-branch> : 다른 브랜치의 변경 사항을 현재 브랜치로 병합할 수 있습니다.
 
 ## clone, init, origin
 리포지토리를 로컬에 생성하는 방법은 clone, init이 있습니다. 다음을 포함하여 작성 바랍니다.

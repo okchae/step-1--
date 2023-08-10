@@ -1,13 +1,29 @@
-첫번째 커밋..!! 
-
 # Git 기초
 Git을 사용하려면 알아야 할 기본 지식을 학습합시다. 아래 항목 위주로 조사하여 나름 이해한대로 채워주시기 바랍니다. 이 템플릿을 이용해도 되고, 자유 형식으로 정리하셔도 됩니다. 블로그 등에 정리한 경우 링크를 첨부해주세요.
 노션링크를 첨부할게요! 
 
 ## Git != Github
 ![git-is-not-github](https://user-images.githubusercontent.com/51331195/160232512-3d6686ca-4ae3-4f11-a8d7-c893c0a7526a.png)  
-git과 github는 같은 의미가 아닙니다.  
-local, remote와 연관지어 적어주세요.
+
+Git : 개인 컴퓨터에서 돌아가는  분산 버전 관리 시스템이다.
+
+**버전 관리 시스템**
+
+- 파일 변화를 시간에 따라 기록했다가 나중에 특정 시점의 버전을 다시 꺼내올 수 있는 시스템이다
+
+**분산 버전 관리 시스템** 
+
+- 저장소 자체를 히스토리와 더불어 전부 복제한다.
+
+Local 저장소 : 개발자는 로컬 저장소에서 작업한다. 로컬저장소는 개발자 개인의 작업 공간이다.
+(Local저장소에서 Remote저장소로 : push)
+
+Remote 저장소 : 원격저장소는 인터넷 상의 서버에 위치한 Git 저장소이다. 여러 개발자가 협업을 위해서 사용하고, 코드의 변경사항을 받아올 수 있다. 
+(Remote저장소에서 local 저장소로: pull)
+
+github : 원격 저장소를 호스팅하고 관리하는 플랫폼이다. 
+
+
 
 ## Git Workflow
 ![git-workflow](https://cdn-media-1.freecodecamp.org/images/1*iL2J8k4ygQlg3xriKGimbQ.png)  

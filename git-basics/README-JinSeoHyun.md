@@ -70,6 +70,17 @@ git merge <source-branch> : 다른 브랜치의 변경 사항을 현재 브랜�
 - git clone과 git init의 차이점, 이용방법
 - origin이란 키워드는 무엇인지, 어떻게 설정하는지
 
+git init:
+git init 명령은 현재 디렉토리를 Git 저장소로 초기화합니다. 이 명령을 사용하면 새로운 Git 저장소가 생성되며, 이후에 파일을 추가하고 커밋할 수 있습니다.
+
+git clone:
+git clone 명령은 원격 저장소의 내용을 로컬로 복제합니다. 기존에 원격 저장소에 있는 코드를 로컬 환경으로 가져올 때 사용합니다. git clone 명령을 사용하면 원격 저장소의 모든 커밋 이력과 파일들을 로컬로 가져옵니다.
+
+origin:
+origin은 기본적으로 Git 원격 저장소를 가리키는 이름입니다. 일반적으로 git clone 명령을 사용하여 원격 저장소를 로컬로 복제할 때, **원격 저장소의 이름으로 origin이 자동으로 설정됩니다.** 이후에 origin이라는 이름으로 원격 저장소에 푸시(push)하거나 풀(pull)하는 등의 작업을 수행할 수 있습니다
+origin 설정:
+origin을 직접 설정하려면 git remote add 명령을 사용합니다. 이 명령을 통해 원격 저장소의 URL과 이름을 연결합니다.
+
 ## reset
 ![reset](https://user-images.githubusercontent.com/51331195/160235594-8836570b-e8bf-484a-bb92-b2bd6d873066.png)  
 reset에는 3가지 타입이 있습니다.  

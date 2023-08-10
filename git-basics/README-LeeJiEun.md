@@ -38,7 +38,22 @@ Git Merge, Git Fetch는 생략해도 됩니다.
 git이 동작하는 기본 단위는 commit과 branch입니다.  
 branch와 HEAD, git checkout을 포함하여 작성 바랍니다.  
 branch 생성 및 삭제, 이동 커맨드 등 자유롭게 내용을 추가해주세요.
+- branch : 독립적으로 작업을 진행하기 위한 개념
+- HEAD : branch의 가장 최신 commit을 가리키는 포인터
+- branch와 HEAD
+  - commit을 하면 HEAD가 가리키는 branch가 최신 commit으로 이동한다.
+  - <img src ="img.png" width="400" height="300"/>
 
+  - 여기서 highlevel branch를 만들면 highlevel branch은 HEAD가 가리키던 커밋을 가리키게 된다.
+  - <img src="img_1.png" width="400" height="300"/>
+
+  - **git checkout highlevel**을 입력하면 HEAD가 highlevel branch를 가리키게 된다.
+  - <img src="img_2.png" width="400" height="300"/>
+
+  - 여기서 commit을 2번 진행하면 아래와 같이 된다.
+  - <img src="img_3.png" width="600" height="300"/>
+
+- [출처 : https://charles098.tistory.com/24]
   
 
 

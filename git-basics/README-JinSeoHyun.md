@@ -28,8 +28,15 @@ github : 원격 저장소를 호스팅하고 관리하는 플랫폼이다.
 ## Git Workflow
 ![git-workflow](https://cdn-media-1.freecodecamp.org/images/1*iL2J8k4ygQlg3xriKGimbQ.png)  
 위는 git이 어떻게 동작하는지 나타낸 다이어그램입니다.  
-Working Directory, Git Add, Git Commit, Git Push 등 각 항목에 대해 작성 바랍니다.  
-Git Merge, Git Fetch는 생략해도 됩니다.
+Working Director : 작업 디렉토리는 현재 작업 중인 프로젝트의 실제 파일들이 위치하는 디렉토리입니다. 여기서 코드를 수정하거나 파일을 추가하거나 삭제할 수 있습니다.
+
+Git Add : 변경된 파일을 Staging Area에 올리는 명령어이다. 
+
+Staging Area : 커밋(Commit)을 수행할 파일들이 올라가는 영역
+
+Git Commit : git commit 명령은 스테이지 영역에 있는 변경 사항들을 로컬 저장소에 커밋하는 역할을 합니다. 
+
+Git Push : git push 명령은 로컬 저장소에 커밋된 변경 사항들을 원격 저장소로 업로드하는 역할을 합니다
 
 ## Branch, HEAD
 ![branch-and-head](https://ihatetomatoes.net/wp-content/uploads/2020/04/07-head-pointer.png)  

@@ -83,6 +83,26 @@ reset에는 3가지 타입이 있습니다.
 ![pull-request-merge](https://atlassianblog.wpengine.com/wp-content/uploads/bitbucket411-blog-1200x-branches2.png)  
 Pull Request와 Merge에 대한 내용을 적어주세요.  
 특히 Merge의 두 타입인 Fast-Forward와 3-Way Merge를 포함해주세요.
+- Pull Requst(PR) 
+  - 사용자가 원격 저장소에 push했을 때, 다른 사용자에게 push된 상황을 알리는 것을 말한다.
+  - PR를 보내면 여러 동료들에게 리뷰를 받을 수 있고, 내가 올린 코드에 동료가 병합하여 진행할 수도 있다.
+- Merge
+  - git branch를 다른 branch로 합치는 과정
+  - 기본 단위는 branch
+  - 종류
+    - Fast-Forward
+    - ![fast-forward](https://wikidocs.net/images/page/153693/05.03.01.jpg)
+      - Fast-foward 상태 : master와 dev1이 각각 가리키는 commit은 동일 선상에 위치하고 있다. 이때 두 branch는 Fast-foward 상태에 있다고 한다.
+      - 새로운 commit이 생성되지 않는다.
+      - 빨리 감기(fast-forward) : 뒤에 쳐진 branch(master)의 참조 개체가 앞서있는 branch가 가리키는 개체를 참조하도록 이동한다.(마치 브랜치가 점프 하듯)
+      - 사용 예 : master로 개발을 진행하다 어떤 내용을 수정해야 하는데, master에서 테스트하기 힘든 경우 다른 branch로 해당 내용을 수정하고 후에 합병할 때 사용
+    - 3-Way Merge
+    - ![3-way merge](https://wikidocs.net/images/page/153693/05.03.03.jpg)
+      - 두 브랜치 모두 base에서 commit을 진행해서 분기해 나간 상태가 되었다. 두 브랜치 중 어느 것도 base에 위치하지 않는다.
+      - 새로운 commit이 생성된다. 
+      - 3-way : 내용을 병합할 때, base와 각 브랜치 2개가 참조하는 commit을 기준으로 병합을 진행하기 때문이다.
+
+
 
 ## rebase
 ![rebase](https://user-images.githubusercontent.com/51331195/160234052-7fe70f85-5906-4474-b809-782adae92b3c.png)  

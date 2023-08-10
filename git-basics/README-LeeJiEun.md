@@ -18,6 +18,19 @@ local, remote와 연관지어 적어주세요.
 위는 git이 어떻게 동작하는지 나타낸 다이어그램입니다.  
 Working Directory, Git Add, Git Commit, Git Push 등 각 항목에 대해 작성 바랍니다.  
 Git Merge, Git Fetch는 생략해도 됩니다.
+- Working Directory
+  - 실제 코드를 수정&추가하여 변경이 이루어지는 영역
+  - git 이력과 관련된 정보가 저장되어 있는 .git 을 제외한 모든 영역
+- git add
+  - 현재 Working Directory 상의 변경 내용을 Staging Area로 이동시키는 명령어, 새로운 파일이 생겼다는 것을 알리는 행위
+    - Staging Area : Working Directory 에서 Repository로 정보가 저장되기 전 준비 영역
+
+- git commit
+  - 파일 및 폴더의 변경 사항을 Local Repository에 기록하는 명령어
+  - 특정 작업이 완결된 상태로 바뀌었다는 것을 의미함
+
+- git push
+  - 변경 사항을 Remote Repository에 기록하는 명령어
 
 
 ## Branch, HEAD

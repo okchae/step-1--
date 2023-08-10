@@ -60,7 +60,15 @@ branch 생성 및 삭제, 이동 커맨드 등 자유롭게 내용을 추가해�
 ## clone, init, origin
 리포지토리를 로컬에 생성하는 방법은 clone, init이 있습니다. 다음을 포함하여 작성 바랍니다.
 - git clone과 git init의 차이점, 이용방법
+  - git clone : 저장소로부터 프로젝트를 복제하는 명령어
+  - git init : 해당 폴더를 git으로 관리할 수 있게 해주는 명령어
+  - git clone은 **기존 저장소를 복제하는 것** / git init은 **기존에 사용하던 디렉토리를 Git 저장소로 만드는 것**
 - origin이란 키워드는 무엇인지, 어떻게 설정하는지
+  - origin : 깃허브 저장소 주소를 가리키는 키워드
+  - git remote add origin {원격 저장소 주소} : 로컬 저장소에 원격 저장소를 등록
+  - git remote remove origin : 원격 저장소를 git의 설정에서 삭제
+
+
 
 ## reset
 ![reset](https://user-images.githubusercontent.com/51331195/160235594-8836570b-e8bf-484a-bb92-b2bd6d873066.png)  

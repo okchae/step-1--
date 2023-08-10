@@ -106,6 +106,30 @@ Hard Reset:`git reset --hard <commit>`
 Pull Request와 Merge에 대한 내용을 적어주세요.  
 특히 Merge의 두 타입인 Fast-Forward와 3-Way Merge를 포함해주세요.
 
+Pull Request 
+
+Pull Request는 코드 변경 사항을 원격 저장소에서 다른 브랜치로 병합하도록 요청하는 기능입니다. 주로 협업 프로젝트에서 사용됩니다.
+개발자는 자신이 작업한 브랜치를 원격 저장소로 푸시하고, 그 브랜치를 기반으로 Pull Request를 생성합니다.
+Pull Request는 다른 개발자들에게 코드 변경 사항을 검토하고 논의하는 기회를 제공하며, 이후에 코드 변경이 승인되면 브랜치가 병합(merge)됩니다.
+
+Merge
+
+Merge는 다른 브랜치의 변경 사항을 현재 브랜치에 통합하는 과정입니다.
+주로 Pull Request가 승인되었을 때나, 혹은 작업이 완료되어 브랜치를 메인 브랜치에 병합할 때 사용됩니다.
+
+  Fast-Forward Merge
+
+  Fast-Forward Merge는 브랜치가 단순히 직선적으로 업데이트된 경우에 발생합니다.
+  현재 브랜치가 병합 대상 브랜치의 모든 커밋을 포함하고 있는 상태에서 Fast-Forward Merge가 수행됩니다.
+  따라서 추가적인 병합 커밋 없이 단순히 브랜치의 포인터가 업데이트됩니다.
+
+  3-Way Merge
+
+  3-Way Merge는 브랜치들이 독립적으로 변경된 경우에 사용됩니다.
+  현재 브랜치와 병합 대상 브랜치, 그리고 공통 조상 커밋 세 개를 기반으로 병합 커밋을 생성합니다.
+  변경 사항이 겹치거나 충돌할 수 있는 경우에도 자동으로 해결하려고 시도하며, 충돌이 발생하는 경우에는 수동으로 충돌을 해결해야 합니다.
+
+
 ## rebase
 ![rebase](https://user-images.githubusercontent.com/51331195/160234052-7fe70f85-5906-4474-b809-782adae92b3c.png)  
 rebase란 무엇인지, 어떤 때에 유용한지 등에 대해 적어주세요.

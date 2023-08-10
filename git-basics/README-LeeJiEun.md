@@ -93,24 +93,36 @@ Pull Request와 Merge에 대한 내용을 적어주세요.
     - Fast-Forward
     - ![fast-forward](https://wikidocs.net/images/page/153693/05.03.01.jpg)
       - Fast-foward 상태 : master와 dev1이 각각 가리키는 commit은 동일 선상에 위치하고 있다. 이때 두 branch는 Fast-foward 상태에 있다고 한다.
-      - 새로운 commit이 생성되지 않는다.
+      - 새로운 commit을 만들지 않는다.
       - 빨리 감기(fast-forward) : 뒤에 쳐진 branch(master)의 참조 개체가 앞서있는 branch가 가리키는 개체를 참조하도록 이동한다.(마치 브랜치가 점프 하듯)
       - 사용 예 : master로 개발을 진행하다 어떤 내용을 수정해야 하는데, master에서 테스트하기 힘든 경우 다른 branch로 해당 내용을 수정하고 후에 합병할 때 사용
     - 3-Way Merge
     - ![3-way merge](https://wikidocs.net/images/page/153693/05.03.03.jpg)
       - 두 브랜치 모두 base에서 commit을 진행해서 분기해 나간 상태가 되었다. 두 브랜치 중 어느 것도 base에 위치하지 않는다.
-      - 새로운 commit이 생성된다. 
+      - 새로운 commit을 만든다.
       - 3-way : 내용을 병합할 때, base와 각 브랜치 2개가 참조하는 commit을 기준으로 병합을 진행하기 때문이다.
-
 
 
 ## rebase
 ![rebase](https://user-images.githubusercontent.com/51331195/160234052-7fe70f85-5906-4474-b809-782adae92b3c.png)  
 rebase란 무엇인지, 어떤 때에 유용한지 등에 대해 적어주세요.
+- rebase
+  - git rebase [브랜치명] : 현재 브랜치가 해당 브랜치(브랜치명)에부터 분기하도록 재배치
+  - 새로운 commit을 만들지 않는다.
+  - commit 이력을 명확하게 남기고자 한다면 merge, 간결하게 정리된 것을 원한다면 rebase를 사용하면 좋다.
 
 ## stash
 ![stash](https://d8it4huxumps7.cloudfront.net/bites/wp-content/banners/2023/4/642a663eaff96_git_stash.png)  
 git stash를 활용하는 방법에 대해 적어주세요.
+- git stash
+  - 파일의 변경 내용을 일시적으로 기록해두는 영역
+  - 명령어
+    - git stash save "message" : 메세지O
+    - git stash : 메세지X
+  - 활용 : 현재 내가 하고 있는 업무보다 우선순위가 높은 새로운 업무를 받거나, 버그를 당장 고쳐야할 때
+  - 다시 불러오는 명령어 : 
+    - git stash pop : 목록에서 사라지고 불러옴
+    - git stash apply : 목록에서 사라지지 않고 불러옴
 
 ## Advanced
 다음 주제는 더 조사해볼만한, 생각해볼만한 것들입니다. 

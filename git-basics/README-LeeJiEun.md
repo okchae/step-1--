@@ -74,6 +74,10 @@ branch 생성 및 삭제, 이동 커맨드 등 자유롭게 내용을 추가해�
 ![reset](https://user-images.githubusercontent.com/51331195/160235594-8836570b-e8bf-484a-bb92-b2bd6d873066.png)  
 reset에는 3가지 타입이 있습니다.  
 각 타입에 대해 작성 바랍니다.
+- git reset <커밋ID> : 과거 commit 지점으로 이동하고, 이동된 이후의 commit은 삭제하는 명령어
+  1. git reset –hard : 해당 커밋ID의 상태로 이동하고, Working Directory와 Index영역 모두 초기화한다.
+  2. git reset –mixed : 해당 커밋ID의 상태로 이동하고, Index영역은 초기화되고 Working Directory는 변경되지 않는다.
+  3. git reset –soft : 해당 커밋ID의 상태로 이동하고, Index영역과 Working Directory 모두 변경되지 않고, commit된 파일들을 staging area로 돌려놓는다.
 
 ## Pull Request, Merge
 ![pull-request-merge](https://atlassianblog.wpengine.com/wp-content/uploads/bitbucket411-blog-1200x-branches2.png)  

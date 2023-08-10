@@ -1,3 +1,4 @@
+노션 링크 첨부
 https://www.notion.so/Git_Hub-Study-09e13a1415214a4f9523a1e63071b7cd
 
 ### **1️⃣️ Git 기초**

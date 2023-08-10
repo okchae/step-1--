@@ -127,13 +127,56 @@ git stash를 활용하는 방법에 대해 적어주세요.
 ## Advanced
 다음 주제는 더 조사해볼만한, 생각해볼만한 것들입니다. 
 - `git rebase --interactive`란?
-- branch의 upstream이란? (`git push --set-upstream`)
+  - 이미 커밋한 히스토리를 변경하거나 또는 삭제하거나, 내용을 추가해야하는 상황에 사용
+  - git rebase -i ${수정할 커밋의 직전 커밋}
+  - vim 에디터로 로그 메시지를 수정
+- branch의 upstream이란?
+  - upstream : 물줄기가 위에서 밑으로 내려올 때, 그 위에서 원천이 되는 source
+  - ![upstream, orgin](https://velog.velcdn.com/images/rkio/post/013929f9-e277-48d7-bd6d-0bae04291209/image.png) 
+  - git push --set-upstream : 위계 질서를 정립하기 위해서 origin을 main 브랜치의 upstream으로 설정하는 명령어
+  - == git push -u origin main
+  - 매번 -u를 할 필요없이 처음 push에만 해주면 된다.
 - PR은 브랜치 뿐만 아니라 Fork한 리포지토리에서도 가능하다. fork은 언제 유용한지. 
+  - fork
+    - 다른 사람의 레포지토리에서 어떤 부분을 수정하거나, 추가 기능을 넣고 싶을 때 사용한다.
+    - fork 한 저장소는 원본 레포지토리(내가 연결한 레포지토리)와 연결되어 있다.
+  - clone
+    - 원본 레포지토리의 내용을 내 로컬 레포지토리로 완전히 복사한다.
+    - clone한 프로젝트는 원본 레포지토리의 로그를 볼 수 없다.
+  - 원본 작업의 변화를 알고 싶거나 원본 작업을 수정해서 반영하고 싶다면 fork, 단순히 원본의 코드를 복사해서 작업하는 것이라면 clone
 - `git fetch`와 `git pull`의 차이점, fetch는 언제 쓰는지
+  - git pull
+    - 원격 서버에서 최신 커밋들을 내려받아서 현재 로컬 브랜치와 자동 병합
+    - pull 자동 병합이 문제가 발생할 때, fetch 방식을 사용해야 한다.
+  - git fetch
+    - 원격 저장소에서 커밋된 코드를 임시 브랜치로 다 내려받고, merge 명령어를 이용해서 수동 병합한다.
+    - 현재 브랜치와 자동 병합 X
 - `reset --hard`와 `push/pull --force`의 적절한 사용법
+  - git reset --hard
+    - 파일과 커밋 모두 명시된 시점으로 돌리는데, 파일을 되돌릴 수 없다.
+    - soft: uncommit changes, changes are left staged (index). (과거로 돌아가서 Staging Area도 현재와 같이 유지하고 싶을 때. git add 안해도 돼서 편하네)
+    - mixed (default): uncommit + unstage changes, changes are left in working tree. (과거 시점으로 돌아가고 Staging Area에 있는 파일도 모두 제거하고 싶을 때. git add도 내가 다시 할래)
+    - hard: uncommit + unstage + delete changes, nothing left. (현재의 코드, 커밋에 미련없이 과거로 돌아가고 싶을 때. 현재에 미련없음. 나 돌아갈래.)
+  - push --force
+    - 원격 저장소와 호환이 되지 않아 오류가 생겼을 때, 원격 저장소의 내용이 로컬 저장소의 내용과 일치하도록 원격 저장소의 내용들을 강제로 덮어쓰게 하는 명령어
+    - 사용을 지양하라
+    - 변경된 내용들을 현재 사용자 이외에는 pull 할 경우가 없을 때(원격 저장소를 혼자서 사용할 때) 사용하는 것이 좋다.
+  - pull --force
+    - local이 날라가도 괜찮을 때
 - `.gitignore` 사용법
+  - git init 을 한 폴더에 .gitignore 이라는 이름으로 파일을 하나 만든다. 
+  - 그 안에 한 줄씩 제외할 파일 혹은 폴더 이름을 쓴다.
 - 브랜치 이름은 `parent/child-1`, `parent/child-2`는 가질 수 있지만 `parent`, `parent/child`는 가질 수 없다. 무슨 이유 때문인지. 
+  - 슬래시로 계층적인 구조로 만들어서 사용할 수 있는데
+  - parent를 생성한 후 parent/child를 생성하면 브랜치가 아닌 child라는 파일이 생성된다.
 - 리포지토리의 두 타입인 bare, non-bare
+  - bare repository
+    - (벌거 벗은)
+    - 작업 공간이 없고 변경 사항만 추적하는 저장소
+    - git init --bare
+  - non-bare repository
+    - git clone, git init을 하게 되면 기본적으로 생성되는 repository
+    -  작업 공간을 함께 생성
 
 ## Questions
 조사/실습하면서 생긴 궁금점이 있다면 여기에 적어서 공유해주세요.

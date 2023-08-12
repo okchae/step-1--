@@ -63,12 +63,12 @@ git에서 commit은 프로젝트의 현재 스테이징된 변경 사항의 스�
 branch는 독립적으로 특정 작업을 진행하기 위해 하나의 버전에서 분기되어 생성된 것으로 여러 작업을 동시에 진행 할 수 있게 한다.
 
 - branch 생성
-  git branch <branch 이름>
-  git checkout -b <branch 이름>
+  git branch [branch 이름]
+  git checkout -b [branch 이름]
 - branch 삭제
-  git branch -d <branch 이름>
+  git branch -d [branch 이름]
 - branch 이동
-  git checkout <branch 이름>
+  git checkout [branch 이름]
 
 ### HEAD
 
@@ -81,11 +81,45 @@ branch는 독립적으로 특정 작업을 진행하기 위해 하나의 버전�
 - git clone과 git init의 차이점, 이용방법
 - origin이란 키워드는 무엇인지, 어떻게 설정하는지
 
+git 저장소 생성 방법에는 git init과 git clone이 있음
+
+### git init
+
+현재 디렉토리를 git local 저장소로 설정하는 명령어
+local -> remote 방향
+이용 방법: git으로 관리하기를 원하는 디렉토리에서 $git init
+
+### git clone
+
+이미 만들어진 remote 저장소를 들고오는 명령어
+remote -> local로 git repository를 복제해온다.
+이용 방법: $git clone [로컬 저장소 경로]
+
+### origin
+
+origin은 원격 저장소의 경로 이름을 의미한다.
+git remote add origin [url]형식으로 원격 저장소를 추가하거나
+git clone을 통해 원격저장소를 복사하면 자동으로 origin이라는 이름의 원격 저장소가 등록된다.
+
 ## reset
 
 ![reset](https://user-images.githubusercontent.com/51331195/160235594-8836570b-e8bf-484a-bb92-b2bd6d873066.png)  
 reset에는 3가지 타입이 있습니다.  
 각 타입에 대해 작성 바랍니다.
+
+사용법: $ git reset [commitId]
+
+### --hard
+
+해당 commitId의 상태로 이동하고, Working Directory와 스테이징 영역을 모두 초기화한다. 해당 commitId 이후의 모든 내용을 지운다.
+
+### --mixed
+
+해당 commitId의 상태로 이동하고, 스테이징 영역은 초기화되고 Working Directory는 변경되지 않는다. 즉 git add가 실행되기 직전의 상태로 돌아간다.
+
+### --soft
+
+해당 commitId의 상태로 이동하고, 스테이징 영역과 Working Directory모두 변경되지 않는다. 즉 git add가 실행된 직후의 상태로 돌아간다.
 
 ## Pull Request, Merge
 

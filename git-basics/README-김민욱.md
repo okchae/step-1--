@@ -26,6 +26,27 @@ github는 git저장소를 관리하는 호스팅 서비스로 다른 사람과 �
 Working Directory, Git Add, Git Commit, Git Push 등 각 항목에 대해 작성 바랍니다.  
 Git Merge, Git Fetch는 생략해도 됩니다.
 
+### Working Directory
+
+사용자의 현재 작업 공간으로 실제 파일을 수정하거나 생성하는 공간
+
+- 2가지 상태
+
+1. untracked - 아직 tracking이 되지 않은 파일 : 새로 생성한 파일이거나 변경된 상태가 없는 파일
+2. tracked - unmodified/modified로 나눌 수 있음. : modified는 수정사항이 있지만 스테이지 영역으로 옮겨지지 않은 파일로 modified된 파일만 스테이징 영역으로 갈 수 있다.
+
+### Git Add
+
+Working Directory상의 변경 내용을 스테이징 영역에 추가한다.
+
+### Git Commit
+
+현재 버전의 코드(스테이징 되어 있는)를 로컬 저장소에 기록한다.
+
+### Git Push
+
+로컬 저장소에 저장된 변경 이력을 원격 저장소에 반영한다.
+
 ## Branch, HEAD
 
 ![branch-and-head](https://ihatetomatoes.net/wp-content/uploads/2020/04/07-head-pointer.png)  

@@ -127,6 +127,43 @@ reset에는 3가지 타입이 있습니다.
 Pull Request와 Merge에 대한 내용을 적어주세요.  
 특히 Merge의 두 타입인 Fast-Forward와 3-Way Merge를 포함해주세요.
 
+### Pull Request
+
+Pull Request란 다른 사용자가 작성한 저장소에서 변경 사항을 병합(merge)하기 위한 요청을 의미한다.
+
+Pull Request는 다음과 같은 기능을 제공한다.
+
+- 원본 저장소 소유자에게 코드 변경 사항을 알린다.
+- 변경 사항의 리뷰를 받는다.
+- 코드 변경 사항이 다른 사람들과 공유될 수 있다.
+
+### Merge
+
+git branch를 다른 branch로 합치는 과정이다.
+
+1. Fast Foward Merge
+   가장 기본적인 merge로 현재 branch의 HEAD를 대상 branch의 HEAD까지 옮기는 merge이다.
+   사용 방법:
+   git switch [현재 branch]
+   git merge [대상 branch]
+   ![Alt text](image.png)
+   사진의 bugfix 브랜치의 이력은 master branch의 이력을 모두 포함하고 있기 때문에 master branch 상태가 변경되어 있지 않으면 master branch는 단순히 이동하기만 해도 bugfix branch의 내용을 적용할 수 있다.
+   ![Alt text](image-1.png)
+
+   하지만 bugfix branch로 분기한 후에 master branch에 여러 변경 사항이 적용되는 경우 master branch의 변경 내용과 bugfix branch의 변경 내용을 하나로 통합해야 한다.
+   ![Alt text](image-3.png)
+   따라서 양쪽의 변경을 가져온 merge commit을 실행하게 된다. (이게 3-Way-Merge로 진행되는 것인가...?)
+   ![Alt text](image-4.png)
+
+   만약 두 branch가 같은 부분을 수정했다면 conflict가 생기게 되는데
+   ![Alt text](image-2.png)
+   conflict를 해결하기 위해 변경 사항을 잘 반영해서 commit을 해주어야 한다.
+
+2. 3-Way Merge
+   merge할 때 각 branch의 마지막 commit과 branch의 공통 조상 commit 총 3개의 commit을 비교하여 새로운 commit을 만들어 병합을 수행한다.
+   하나의 branch와 다른 branch의 모든 변경 이력을 합치는 방식으로 진행된다.
+   base를 기준으로 변경사항이 있는 파일들을 merge commit에 반영한다. 만약 두 commit 모두에서 변경사항이 발생하여 충돌이 발생하면 충돌을 해결한 후 commit 해주면 된다.
+
 ## rebase
 
 ![rebase](https://user-images.githubusercontent.com/51331195/160234052-7fe70f85-5906-4474-b809-782adae92b3c.png)  

@@ -206,15 +206,73 @@ git stash를 활용하는 방법에 대해 적어주세요.
 
 다음 주제는 더 조사해볼만한, 생각해볼만한 것들입니다.
 
-- `git rebase --interactive`란?
-- branch의 upstream이란? (`git push --set-upstream`)
-- PR은 브랜치 뿐만 아니라 Fork한 리포지토리에서도 가능하다. fork은 언제 유용한지.
-- `git fetch`와 `git pull`의 차이점, fetch는 언제 쓰는지
-- `reset --hard`와 `push/pull --force`의 적절한 사용법
-- `.gitignore` 사용법
-- 브랜치 이름은 슬래시를 통해 계층적으로 가질 수 있다. 단, `parent/child-1`, `parent/child-2`는 동시에 가질 수 있지만 `parent`, `parent/child`는 그러지 못한다. 무슨 이유 때문인지.
+- `git rebase --interactive`란? <br>
+
+  불필요한 commit 이력을 제거하여 commit 추적을 용이하게 한다. <br>
+
+- branch의 upstream이란? (`git push --set-upstream`)<br>
+
+  upstream은 local 저장소와 연결된 remote 저장소를 의미한다. <br>
+  $ git push --set-upstream A B: 로컬 A 저장소의 원격 저장소를 B로 지정하여 B에 push
+
+- PR은 브랜치 뿐만 아니라 Fork한 리포지토리에서도 가능하다. fork은 언제 유용한지.<br>
+
+  fork를 하면 원본 저장소의 복사본이 만들어지고 복사본에서 작업을 하기 때문에 branch를 새로 만들지 않고 master에서 작업이 가능하다.<br>
+  원본 저장소에 변경분을 반영하기 위해 PR을 요청하고 승인되면 원본 저장소에 기여자로 등록된다. <br>
+
+- `git fetch`와 `git pull`의 차이점, fetch는 언제 쓰는지<br>
+
+  fetch는 원격 저장소에 변경사항이 있는지 확인만 하고 변경된 데이터를 로컬로 가져오지 않음 - 원격 저장소에서 commit된 코드를 임시 branch로 모두 내려받은 후 해당 branch로 checkout하여 변경된 내용을 확인, Working Directory에 변화X<br>
+  pull은 원격 저장소에서 변경된 메타데이터 정보 확인과 최신 데이터를 복사하여 로컬로 가져옴. (fetch + merge)<br>
+
+- `reset --hard`와 `push/pull --force`의 적절한 사용법 <br>
+
+  **push -f**
+  원격 저장소의 내용을 로컬 저장소의 내용과 일치하도록 강제로 덮어쓴다. 원격 저장소에 저장된 commit 내용 중 일부가 유실될 수 있음. <br>
+  적절한 사용법 <br>
+
+  - 덮어쓰기 하려는 변경사항을 현재 사용자 외에 다른 사람들이 pull하지 않은 경우 <br>
+  - push -f를 수행한 이후, 모든 사용자로 하여금 pull하여 변경 사항을 새로운 버전으로 재적용하기로 합의가 된 경우 <br>
+  - -force-with-lease 옵션 사용 : 덮어쓰기 하기 전 수정사항이 없을 때만 덮어쓰기가 수행된다. <br>
+
+  **pull -f**
+  로컬 branch의 변경 사항을 무시하고 원격 저장소의 최신 변경사항으로 로컬 branch를 강제로 업데이트하는데 사용<br>
+
+  **reset --hard를 사용하여 덮어쓰기와 같은 효과를 만들 수 있다** <br>
+
+  1. git fetch --all : git pull 받을 목록을 저장소에서 업데이트 <br>
+  2. git reset --hard origin/[작업중인 branch 이름]: git reset --hard로 head를 최신 버전으로 가리킨다 <br>
+  3. git pull <br>
+
+<br>
+
+- `.gitignore` 사용법<br>
+
+  git에 추가되지 말아야 할 파일을 정의한다.<br>
+  [folder name]/ : 특정 폴더에 있는 전체 파일 무시<br>
+  \*.[확장자] : 특정 확장자 전체 무시<br>
+  [디렉터리명]/[파일명] : 특정 파일 무시<br>
+
+- 브랜치 이름은 슬래시를 통해 계층적으로 가질 수 있다. 단, `parent/child-1`, `parent/child-2`는 동시에 가질 수 있지만 `parent`, `parent/child`는 그러지 못한다. 무슨 이유 때문인지.<br>
+
+  git은 파일시스템과 유사한 계층 구조를 가지고 있다. <br>
+  branch는 파일로 존재하는데, 만약 parent/child인 branch가 있고, parent인 brach를 생성하려고 한다면 parent라는 파일이 생성되어야 하는데 디렉토리 이름과 겹치기 때문에 생성할 수 없다.
+
 - detached HEAD란 어떤 상태인지, 이 상태에서 커밋을 하게 되면 어떻게 되는지
+  **detached HEAD**<br>
+  https://devcamus.tistory.com/6 - 그림으로 이해하기 쉬운 설명이 있어서 참조하였습니다.<br>
+  head가 branch로부터 떨어져 있는 상태를 뜻한다. branch를 통해서가 아니라 head가 직접 commit을 참조하고 있는 상태. <br>
+  (보통 attacehd 상태이면 head -> branch -> commit의 참조 순서를 가진다.) <br>
+  git checkout [revision number]명령어를 사용해, 특정 commit으로 checkout하여 head가 변경된 경우 detached head 상태가 된다.<br>
+
+  **detached HEAD상태에서 commit** <br>
+  detached HEAD 상태에서 commit을 하면 어떤 branch도 commit을 가리키지 않으므로 branch로부터 분리된 상태로 남게된다. <br>
+  이 commit에 접근하기 위해서 git branch -f [branch 명] HEAD 와 같이 branch를 HEAD가 가리키는 commit으로 강제 이동시키고 git checkout [branch 명]을 하여 head가 해당 branch를 참조하게끔 checkout 해주면 된다. <br>
+  즉, 핵심은 head -> branch -> commit의 참조 순서를 만들어주면 된다! <br>
 
 ## Questions
 
 조사/실습하면서 생긴 궁금점이 있다면 여기에 적어서 공유해주세요.
+
+git에 대해 잘 모르고 있다는 것을 느낄 수 있었다. <br>
+특히 Rebase부분은 아직 잘 이해가 안된 것 같다. 스터디를 진행하면서 더 이해를 해봐야겠다.

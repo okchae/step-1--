@@ -12,12 +12,12 @@ local, remote와 연관지어 적어주세요.
 
 ### Git
 
-git은 본인의 코드와 수정내역을 기록하고 관리하는 버전 관리 프로그램으로 로컬에서 프로젝트의 기록을 스스로 관리할 수 있도록 해줌
+git은 본인의 코드와 수정내역을 기록하고 관리하는 버전 관리 프로그램으로 로컬에서 프로젝트의 기록을 스스로 관리할 수 있도록 해줌<br>
 git을 통해 브랜치 생성, 삭제, 복구, 병합이 가능하지만 로컬 저장소를 사용하기 때문에 협업시 사용이 불가능함
 
 ### GitHub
 
-github는 git저장소를 관리하는 호스팅 서비스로 다른 사람과 소스코드 공유가 가능하며 한 프로젝트에 여러 명의 사람이 참여하여 버전 제어 및 공동 작업이 가능하다. 즉, git으로 관리하는 프로젝트를 올려둘 수 있는 사이트로 github외 gitlab, bitbucket 등 여러가지 사이트가 있다.
+github는 git저장소를 관리하는 호스팅 서비스로 다른 사람과 소스코드 공유가 가능하며 한 프로젝트에 여러 명의 사람이 참여하여 버전 제어 및 공동 작업이 가능하다. <br> 즉, git으로 관리하는 프로젝트를 올려둘 수 있는 사이트로 github외 gitlab, bitbucket 등 여러가지 사이트가 있다.
 
 ## Git Workflow
 
@@ -33,7 +33,7 @@ Git Merge, Git Fetch는 생략해도 됩니다.
 - 2가지 상태
 
 1. untracked - 아직 tracking이 되지 않은 파일 : 새로 생성한 파일이거나 변경된 상태가 없는 파일
-2. tracked - unmodified/modified로 나눌 수 있음. : modified는 수정사항이 있지만 스테이지 영역으로 옮겨지지 않은 파일로 modified된 파일만 스테이징 영역으로 갈 수 있다.
+2. tracked - unmodified/modified로 나눌 수 있음 : modified는 수정사항이 있지만 스테이지 영역으로 옮겨지지 않은 파일로 modified된 파일만 스테이징 영역으로 갈 수 있다.
 
 ### Git Add
 
@@ -81,24 +81,26 @@ branch는 독립적으로 특정 작업을 진행하기 위해 하나의 버전�
 - git clone과 git init의 차이점, 이용방법
 - origin이란 키워드는 무엇인지, 어떻게 설정하는지
 
-git 저장소 생성 방법에는 git init과 git clone이 있음
+<br>
+
+**git 저장소 생성 방법에는 git init과 git clone이 있음**
 
 ### git init
 
-현재 디렉토리를 git local 저장소로 설정하는 명령어
-local -> remote 방향
+현재 디렉토리를 git local 저장소로 설정하는 명령어 <br>
+local -> remote 방향 <br>
 이용 방법: git으로 관리하기를 원하는 디렉토리에서 $git init
 
 ### git clone
 
-이미 만들어진 remote 저장소를 들고오는 명령어
-remote -> local로 git repository를 복제해온다.
+이미 만들어진 remote 저장소를 들고오는 명령어 <br>
+remote -> local로 git repository를 복제해온다. <br>
 이용 방법: $git clone [로컬 저장소 경로]
 
 ### origin
 
-origin은 원격 저장소의 경로 이름을 의미한다.
-git remote add origin [url]형식으로 원격 저장소를 추가하거나
+origin은 원격 저장소의 경로 이름을 의미한다.<br>
+git remote add origin [url]형식으로 원격 저장소를 추가하거나<br>
 git clone을 통해 원격저장소를 복사하면 자동으로 origin이라는 이름의 원격 저장소가 등록된다.
 
 ## reset
@@ -107,19 +109,19 @@ git clone을 통해 원격저장소를 복사하면 자동으로 origin이라는
 reset에는 3가지 타입이 있습니다.  
 각 타입에 대해 작성 바랍니다.
 
-사용법: $ git reset [commitId]
+**사용법: $ git reset [commitId]**
 
 ### --hard
 
-해당 commitId의 상태로 이동하고, Working Directory와 스테이징 영역을 모두 초기화한다. 해당 commitId 이후의 모든 내용을 지운다.
+해당 commitId의 상태로 이동하고, **Working Directory와 스테이징 영역을 모두 초기화**한다. 해당 commitId 이후의 모든 내용을 지운다.
 
 ### --mixed
 
-해당 commitId의 상태로 이동하고, 스테이징 영역은 초기화되고 Working Directory는 변경되지 않는다. 즉 git add가 실행되기 직전의 상태로 돌아간다.
+해당 commitId의 상태로 이동하고, **스테이징 영역은 초기화되고 Working Directory는 변경되지 않는다.** 즉 **git add가 실행되기 직전의 상태**로 돌아간다.
 
 ### --soft
 
-해당 commitId의 상태로 이동하고, 스테이징 영역과 Working Directory모두 변경되지 않는다. 즉 git add가 실행된 직후의 상태로 돌아간다.
+해당 commitId의 상태로 이동하고, **스테이징 영역과 Working Directory모두 변경되지 않는다.** 즉 **git add가 실행된 직후의 상태**로 돌아간다.
 
 ## Pull Request, Merge
 
@@ -141,8 +143,8 @@ Pull Request는 다음과 같은 기능을 제공한다.
 
 git branch를 다른 branch로 합치는 과정이다.
 
-1. Fast Foward Merge
-   가장 기본적인 merge로 현재 branch의 HEAD를 대상 branch의 HEAD까지 옮기는 merge이다.
+1. Fast Foward Merge <br>
+   가장 기본적인 merge로 현재 branch의 HEAD를 대상 branch의 HEAD까지 옮기는 merge이다. <br>
    사용 방법:
    git switch [현재 branch]
    git merge [대상 branch]
@@ -155,13 +157,13 @@ git branch를 다른 branch로 합치는 과정이다.
    따라서 양쪽의 변경을 가져온 merge commit을 실행하게 된다. (이게 3-Way-Merge로 진행되는 것인가...?)
    ![Alt text](image-4.png)
 
-   만약 두 branch가 같은 부분을 수정했다면 conflict가 생기게 되는데
-   ![Alt text](image-2.png)
+   만약 두 branch가 같은 부분을 수정했다면 conflict가 생기게 되는데 <br>
+   ![Alt text](image-2.png) <br>
    conflict를 해결하기 위해 변경 사항을 잘 반영해서 commit을 해주어야 한다.
 
-2. 3-Way Merge
-   merge할 때 각 branch의 마지막 commit과 branch의 공통 조상 commit 총 3개의 commit을 비교하여 새로운 commit을 만들어 병합을 수행한다.
-   하나의 branch와 다른 branch의 모든 변경 이력을 합치는 방식으로 진행된다.
+2. 3-Way Merge <br>
+   merge할 때 각 branch의 마지막 commit과 branch의 공통 조상(base) commit 총 3개의 commit을 비교하여 새로운 commit을 만들어 병합을 수행한다. <br>
+   하나의 branch와 다른 branch의 모든 변경 이력을 합치는 방식으로 진행된다. <br>
    base를 기준으로 변경사항이 있는 파일들을 merge commit에 반영한다. 만약 두 commit 모두에서 변경사항이 발생하여 충돌이 발생하면 충돌을 해결한 후 commit 해주면 된다.
 
 ## rebase

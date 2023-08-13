@@ -145,8 +145,8 @@ git branch를 다른 branch로 합치는 과정이다.
 
 1. Fast Foward Merge <br>
    가장 기본적인 merge로 현재 branch의 HEAD를 대상 branch의 HEAD까지 옮기는 merge이다. <br>
-   사용 방법:
-   git switch [현재 branch]
+   사용 방법: <br>
+   git switch [현재 branch] <br>
    git merge [대상 branch]
    ![Alt text](image.png)
    사진의 bugfix 브랜치의 이력은 master branch의 이력을 모두 포함하고 있기 때문에 master branch 상태가 변경되어 있지 않으면 master branch는 단순히 이동하기만 해도 bugfix branch의 내용을 적용할 수 있다.
@@ -172,7 +172,7 @@ git branch를 다른 branch로 합치는 과정이다.
 rebase란 무엇인지, 어떤 때에 유용한지 등에 대해 적어주세요.
 
 Git에서 한 branch에서 다른 branch로 합치는 방법은 Merge와 Rebase가 있다. <br>
-Rebase는 두 개의 공통 Base를 가진 branch에서 한 branch의 base를 다른 branch의 최신 commit으로 base를 옮기는 작업이다. <br>
+Rebase는 두 개의 공통 base를 가진 branch에서 한 branch의 base를 다른 branch의 최신 commit으로 base를 옮기는 작업이다. <br>
 Merge와 Rebase의 실행 결과는 같지만 commit 히스토리가 달라진다. <br>
 Merge는 쉽고 안전하지만 commit 히스토리가 지저분할 수 있다. Rebase를 사용하면 commit 히스토리를 깔끔하게 관리할 수 있다. 특히 분기한 branch가 많을수록 commit 히스토리를 심플하게 유지하여 commit 추적을 용이하게 한다. <br>
 
@@ -227,15 +227,15 @@ git stash를 활용하는 방법에 대해 적어주세요.
 
 - `reset --hard`와 `push/pull --force`의 적절한 사용법 <br>
 
-  **push -f**
+  **push -f** <br>
   원격 저장소의 내용을 로컬 저장소의 내용과 일치하도록 강제로 덮어쓴다. 원격 저장소에 저장된 commit 내용 중 일부가 유실될 수 있음. <br>
-  적절한 사용법 <br>
+  적절한 사용법
 
   - 덮어쓰기 하려는 변경사항을 현재 사용자 외에 다른 사람들이 pull하지 않은 경우 <br>
   - push -f를 수행한 이후, 모든 사용자로 하여금 pull하여 변경 사항을 새로운 버전으로 재적용하기로 합의가 된 경우 <br>
   - -force-with-lease 옵션 사용 : 덮어쓰기 하기 전 수정사항이 없을 때만 덮어쓰기가 수행된다. <br>
 
-  **pull -f**
+  **pull -f** <br>
   로컬 branch의 변경 사항을 무시하고 원격 저장소의 최신 변경사항으로 로컬 branch를 강제로 업데이트하는데 사용<br>
 
   **reset --hard를 사용하여 덮어쓰기와 같은 효과를 만들 수 있다** <br>

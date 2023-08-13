@@ -171,6 +171,15 @@ git branch를 다른 branch로 합치는 과정이다.
 ![rebase](https://user-images.githubusercontent.com/51331195/160234052-7fe70f85-5906-4474-b809-782adae92b3c.png)  
 rebase란 무엇인지, 어떤 때에 유용한지 등에 대해 적어주세요.
 
+Git에서 한 branch에서 다른 branch로 합치는 방법은 Merge와 Rebase가 있다. <br>
+Rebase는 두 개의 공통 Base를 가진 branch에서 한 branch의 base를 다른 branch의 최신 commit으로 base를 옮기는 작업이다. <br>
+Merge와 Rebase의 실행 결과는 같지만 commit 히스토리가 달라진다. <br>
+Merge는 쉽고 안전하지만 commit 히스토리가 지저분할 수 있다. Rebase를 사용하면 commit 히스토리를 깔끔하게 관리할 수 있다. 특히 분기한 branch가 많을수록 commit 히스토리를 심플하게 유지하여 commit 추적을 용이하게 한다. <br>
+
+Rebase의 위험성
+사람들이 사용하고 있는 commit을 Rebase하면 문제가 생긴다. <br>
+push하기 전에 로컬에서만 rebase를 사용하자.
+
 ## stash
 
 ![stash](https://d8it4huxumps7.cloudfront.net/bites/wp-content/banners/2023/4/642a663eaff96_git_stash.png)  

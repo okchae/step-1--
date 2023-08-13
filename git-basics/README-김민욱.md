@@ -185,6 +185,23 @@ push하기 전에 로컬에서만 rebase를 사용하자.
 ![stash](https://d8it4huxumps7.cloudfront.net/bites/wp-content/banners/2023/4/642a663eaff96_git_stash.png)  
 git stash를 활용하는 방법에 대해 적어주세요.
 
+**하던 작업을 스택에 임시로 저장하고 나중에 다시 꺼내올 수 있다.**
+
+어떤 작업을 하던 중 다른 요청이 들어와 작업을 멈추고 브랜치를 변경해야 하는데 아직 완료되지 않은 경우 commit을 하지 않고 stash를 사용할 수 있다. (checkout을 하기전에 꼭 commit을 해야하기 때문)<br>
+
+사용 방법
+
+- $ git stash: 변경 내용 임시 저장하기
+- $ git stash list: stash한 list 보기
+- $ git stash apply: 가장 최근 stash 가지고 오기
+- $ git stash apply [stash 이름]: 특정 stash 가지고 오기
+- $ git stash drop: 가장 최근 stash 지우기
+- $ git stash drop [stash 이름]: 특정 stash 지우기
+- $ git stash clear: stash 모두 지우기
+- $ git stash pop: 가장 최근 stash를 적용하고 동시에 stack에서 지우기 (apply + drop)
+- $ git stash pop [stash 이름]: 특정 stash를 적용하고 동시에 stack에서 지우기 (apply + drop)
+- $ git stash save [stash 이름]: stash 이름 지정하여 저장하기
+
 ## Advanced
 
 다음 주제는 더 조사해볼만한, 생각해볼만한 것들입니다.
